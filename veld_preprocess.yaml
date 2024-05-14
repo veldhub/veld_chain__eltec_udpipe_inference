@@ -7,12 +7,23 @@ services:
       file: ./veld_executable_16_xml_xslt_transformer/veld.yaml
       service: veld
     volumes:
-      #- ./data/1_input_xml_xsl/ELTeC-deu/:/veld/input/1/
-      - ./data/1_input_xml_xsl/test/:/veld/input/1/
+      - ./data/1_input_xml_xsl/xml/:/veld/input/1/
       - ./data/1_input_xml_xsl/xsl/:/veld/input/2/
-      - ./data/2_tmp_txt/:/veld/output/
+      - ./data/2_txt/:/veld/output/
     environment:
-      in_xml_path: "/veld/input/1/"
+
+      # demo 1: process single file
+      #in_xml_path: "/veld/input/1/demo/demo1/DEU050.xml"
+      #in_xsl_path: "/veld/input/2/transformation.xsl"
+      #out_txt_path: "/veld/output/demo/demo1/DEU050.txt"
+
+      # demo 2: download xml
       #in_xml_url: "https://raw.githubusercontent.com/COST-ELTeC/ELTeC-deu/master/level1/DEU051.xml"
+      #in_xsl_path: "/veld/input/2/transformation.xsl"
+      #out_txt_path: "/veld/output/demo/demo2/DEU051.txt"
+
+      # demo 3: process folder
+      in_xml_path: "/veld/input/1/demo/demo3/"
       in_xsl_path: "/veld/input/2/transformation.xsl"
-      out_txt_path: "/veld/output/"
+      out_txt_path: "/veld/output/demo/demo3/"
+

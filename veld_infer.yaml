@@ -7,11 +7,23 @@ services:
       file: ./veld_executable_15_udpipe/veld_infer.yaml
       service: veld
     volumes:
-      - ./data/2_tmp_txt/:/veld/input/1/
-      - ./data/3_tmp_models/:/veld/input/2/
+      - ./data/2_txt/:/veld/input/1/
+      - ./data/3_models/:/veld/input/2/
       - ./data/4_output_conllu/:/veld/output/
     environment:
-      input_text_file_path: "/veld/input/1/DEU050.txt"
-      model_path: "/veld/input/2/de_hdt-ud-train-a-1.model"
-      output_conllu_file_path: "/veld/output/DEU050.conllu" 
+
+      # demo 1
+      #in_txt_path: "/veld/input/1/demo/demo1/DEU050.txt"
+      #in_model_path: "/veld/input/2/de_hdt-ud-train-a-1.model"
+      #out_conllu_path: "/veld/output/demo/demo1/DEU050.conllu"
+
+      # demo 2
+      #in_txt_path: "/veld/input/1/"
+      #in_model_path: "/veld/input/2/de_hdt-ud-train-a-1.model"
+      #out_conllu_path: "/veld/output/"
+      
+      # demo 3
+      in_txt_path: "/veld/input/1/demo/demo3/"
+      in_model_path: "/veld/input/2/de_hdt-ud-train-a-1.model"
+      out_conllu_path: "/veld/output/demo/demo3/"
 
