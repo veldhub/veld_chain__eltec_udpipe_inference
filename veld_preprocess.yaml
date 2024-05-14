@@ -12,5 +12,7 @@ services:
       - ./data/2_tmp_txt/:/veld/output/
     environment:
       in_xml_path: "/veld/input/1/level1/DEU050.xml"
+      #in_xml_url: "https://raw.githubusercontent.com/COST-ELTeC/ELTeC-deu/master/level1/DEU051.xml"
       in_xsl_path: "/veld/input/2/transformation.xsl"
+      #in_xsl_url: "xy"
       out_txt_path: "/veld/output/DEU050.txt"
