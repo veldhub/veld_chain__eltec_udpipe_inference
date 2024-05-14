@@ -1,0 +1,16 @@
+x-veld:
+  chain:
+
+services:
+  veld:
+    extends:
+      file: ./veld_executable_16_xml_xslt_transformer/veld.yaml
+      service: veld
+    volumes:
+      - ./data/1_input_xml_xsl/ELTeC-deu/:/veld/input/1/
+      - ./data/1_input_xml_xsl/xsl/:/veld/input/2/
+      - ./data/2_tmp_txt/:/veld/output/
+    environment:
+      in_xml_path: "/veld/input/1/level1/DEU050.xml"
+      in_xsl_path: "/veld/input/2/transformation.xsl"
+      out_txt_path: "/veld/output/DEU050.txt"
