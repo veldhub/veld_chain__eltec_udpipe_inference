@@ -2,5 +2,15 @@ x-veld:
   chain:
 
 services:
-  veld_all:
+  veld_preprocess:
+    extends:
+      file: ./veld_preprocess_xml.yaml
+      service: veld
+  veld_infer:
+    extends:
+      file: ./veld_infer_udpipe.yaml
+      service: veld
+    depends_on: 
+      veld_preprocess:
+        condition: service_completed_successfully
 
