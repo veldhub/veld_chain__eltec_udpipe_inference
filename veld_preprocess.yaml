@@ -3,7 +3,7 @@ x-veld:
     description: "xml / xslt transformation of ELTeC data"
 
 services:
-  veld:
+  veld_preprocess:
     extends:
       file: ./veld_executable_16_xml_xslt_transformer/veld.yaml
       service: veld

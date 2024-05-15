@@ -3,15 +3,17 @@ x-veld:
     description: "udpipe inference setup, reading in preprocessed ELTeC data"
 
 services:
-  veld:
+  veld_infer:
     extends:
       file: ./veld_executable_15_udpipe/veld_infer.yaml
       service: veld
     volumes:
       - ./data/2_txt/:/veld/input/1/
       - ./data/3_models/:/veld/input/2/
-      #- ./data/4_output_conllu/:/veld/output/
+      # for real output, use dedicatd submodule
       - ./veld_data_11_eltec_udpipe_conllu/:/veld/output/
+      # for demo purpose, use the local folder
+      #- ./data/4_output_conllu/:/veld/output/
     environment:
       in_txt_path: "/veld/input/1/ELTeC-deu/level1/"
       in_model_path: "/veld/input/2/de_hdt-ud-train-a-1.model"
