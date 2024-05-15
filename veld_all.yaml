@@ -4,11 +4,11 @@ x-veld:
 services:
   veld_preprocess:
     extends:
-      file: ./veld_preprocess_xml.yaml
+      file: ./veld_preprocess.yaml
       service: veld
   veld_infer:
     extends:
-      file: ./veld_infer_udpipe.yaml
+      file: ./veld_infer.yaml
       service: veld
     depends_on: 
       veld_preprocess:
