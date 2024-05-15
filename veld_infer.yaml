@@ -1,5 +1,6 @@
 x-veld:
   chain:
+    description: "udpipe inference setup, reading in preprocessed ELTeC data"
 
 services:
   veld:

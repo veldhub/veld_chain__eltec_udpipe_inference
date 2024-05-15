@@ -1,5 +1,6 @@
 x-veld:
   chain:
+    description: "xml / xslt transformation of ELTeC data"
 
 services:
   veld:
