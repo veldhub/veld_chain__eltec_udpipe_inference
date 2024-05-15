@@ -10,13 +10,17 @@ services:
     volumes:
       - ./data/2_txt/:/veld/input/1/
       - ./data/3_models/:/veld/input/2/
-      - ./data/4_output_conllu/:/veld/output/
+      #- ./data/4_output_conllu/:/veld/output/
+      - ./veld_data_11_eltec_udpipe_conllu/:/veld/output/
     environment:
+      in_txt_path: "/veld/input/1/ELTeC-deu/level1/"
+      in_model_path: "/veld/input/2/de_hdt-ud-train-a-1.model"
+      out_conllu_path: "/veld/output/data/ELTeC-deu/level1/"
 
       # demo 1
-      in_txt_path: "/veld/input/1/demo/demo1/DEU050.txt"
-      in_model_path: "/veld/input/2/de_hdt-ud-train-a-1.model"
-      out_conllu_path: "/veld/output/demo/demo1/DEU050.conllu"
+      #in_txt_path: "/veld/input/1/demo/demo1/DEU050.txt"
+      #in_model_path: "/veld/input/2/de_hdt-ud-train-a-1.model"
+      #out_conllu_path: "/veld/output/demo/demo1/DEU050.conllu"
 
       # demo 2
       #in_txt_url: "https://www.gutenberg.org/cache/epub/42900/pg42900.txt"
