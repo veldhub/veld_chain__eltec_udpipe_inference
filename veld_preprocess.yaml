@@ -2,32 +2,54 @@ x-veld:
   chain:
     description: "xml / xslt transformation of ELTeC data"
 
+x-vars: 
+  - &var_extends
+    file: ./veld_executable_16_xml_xslt_transformer/veld.yaml
+    service: veld
+  - &var_volumes
+    - ./veld_data_12_eltec_original_selection/:/veld/input/1/
+    - ./xsl/:/veld/input/2/
+    - ./veld_data_13_eltec_txt_transformed/:/veld/output/
+
 services:
-  veld_preprocess:
-    extends:
-      file: ./veld_executable_16_xml_xslt_transformer/veld.yaml
-      service: veld
-    volumes:
-      - ./data/1_input_xml_xsl/xml/:/veld/input/1/
-      - ./data/1_input_xml_xsl/xsl/:/veld/input/2/
-      - ./data/2_txt/:/veld/output/
+
+  veld_preprocess_cze:
+    extends: *var_extends
+    volumes: *var_volumes
     environment:
-      in_xml_path: "/veld/input/1/ELTeC-deu/level1/"
       in_xsl_path: "/veld/input/2/transformation.xsl"
-      out_txt_path: "/veld/output/ELTeC-deu/level1/"
+      in_xml_path: "/veld/input/1/data/ELTeC-cze/level1/"
+      out_txt_path: "/veld/output/data/ELTeC-cze/level1/"
 
-      # demo 1: process single file
-      #in_xml_path: "/veld/input/1/demo/demo1/DEU050.xml"
-      #in_xsl_path: "/veld/input/2/transformation.xsl"
-      #out_txt_path: "/veld/output/demo/demo1/DEU050.txt"
+  veld_preprocess_deu:
+    extends: *var_extends
+    volumes: *var_volumes
+    environment:
+      in_xsl_path: "/veld/input/2/transformation.xsl"
+      in_xml_path: "/veld/input/1/data/ELTeC-deu/level1/"
+      out_txt_path: "/veld/output/data/ELTeC-deu/level1/"
 
-      # demo 2: download xml
-      #in_xml_url: "https://raw.githubusercontent.com/COST-ELTeC/ELTeC-deu/master/level1/DEU051.xml"
-      #in_xsl_path: "/veld/input/2/transformation.xsl"
-      #out_txt_path: "/veld/output/demo/demo2/DEU051.txt"
+  veld_preprocess_eng:
+    extends: *var_extends
+    volumes: *var_volumes
+    environment:
+      in_xsl_path: "/veld/input/2/transformation.xsl"
+      in_xml_path: "/veld/input/1/data/ELTeC-eng/level1/"
+      out_txt_path: "/veld/output/data/ELTeC-eng/level1/"
 
-      # demo 3: process folder
-      #in_xml_path: "/veld/input/1/demo/demo3/"
-      #in_xsl_path: "/veld/input/2/transformation.xsl"
-      #out_txt_path: "/veld/output/demo/demo3/"
+  veld_preprocess_fra:
+    extends: *var_extends
+    volumes: *var_volumes
+    environment:
+      in_xsl_path: "/veld/input/2/transformation.xsl"
+      in_xml_path: "/veld/input/1/data/ELTeC-fra/level1/"
+      out_txt_path: "/veld/output/data/ELTeC-fra/level1/"
+
+  veld_preprocess_spa:
+    extends: *var_extends
+    volumes: *var_volumes
+    environment:
+      in_xsl_path: "/veld/input/2/transformation.xsl"
+      in_xml_path: "/veld/input/1/data/ELTeC-spa/level1/"
+      out_txt_path: "/veld/output/data/ELTeC-spa/level1/"
 
