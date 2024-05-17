@@ -2,35 +2,54 @@ x-veld:
   chain:
     description: "udpipe inference setup, reading in preprocessed ELTeC data"
 
+x-vars: 
+  - &var_extends
+    file: ./veld_executable_15_udpipe/veld_infer.yaml
+    service: veld
+  - &var_volumes
+    - ./veld_data_13_eltec_txt_transformed/:/veld/input/1/
+    - ./veld_data_14_udpipe_models/:/veld/input/2/
+    - ./veld_data_15_eltec_udpipe_conllu/:/veld/output/
+
 services:
-  veld_infer:
-    extends:
-      file: ./veld_executable_15_udpipe/veld_infer.yaml
-      service: veld
-    volumes:
-      - ./data/2_txt/:/veld/input/1/
-      - ./data/3_models/:/veld/input/2/
-      # for real output, use dedicatd submodule
-      - ./veld_data_11_eltec_udpipe_conllu/:/veld/output/
-      # for demo purpose, use the local folder
-      #- ./data/4_output_conllu/:/veld/output/
+
+  veld_infer_cze:
+    extends: *var_extends
+    volumes: *var_volumes
     environment:
-      in_txt_path: "/veld/input/1/ELTeC-deu/level1/"
-      in_model_path: "/veld/input/2/de_hdt-ud-train-a-1.model"
+      in_txt_path: "/veld/input/1/data/ELTeC-cze/level1/"
+      in_model_path: "/veld/input/2/data/cze/czech-pdt-ud-2.5-191206.udpipe"
+      out_conllu_path: "/veld/output/data/ELTeC-cze/level1/"
+  
+  veld_infer_deu:
+    extends: *var_extends
+    volumes: *var_volumes
+    environment:
+      in_txt_path: "/veld/input/1/data/ELTeC-deu/level1/"
+      in_model_path: "/veld/input/2/data/deu/german-hdt-ud-2.5-191206.udpipe"
       out_conllu_path: "/veld/output/data/ELTeC-deu/level1/"
-
-      # demo 1
-      #in_txt_path: "/veld/input/1/demo/demo1/DEU050.txt"
-      #in_model_path: "/veld/input/2/de_hdt-ud-train-a-1.model"
-      #out_conllu_path: "/veld/output/demo/demo1/DEU050.conllu"
-
-      # demo 2
-      #in_txt_url: "https://www.gutenberg.org/cache/epub/42900/pg42900.txt"
-      #in_model_path: "/veld/input/2/de_hdt-ud-train-a-1.model"
-      #out_conllu_path: "/veld/output/demo/demo2/pg42900.conllu"
-      
-      # demo 3
-      #in_txt_path: "/veld/input/1/demo/demo3/"
-      #in_model_path: "/veld/input/2/de_hdt-ud-train-a-1.model"
-      #out_conllu_path: "/veld/output/demo/demo3/"
+  
+  veld_infer_eng:
+    extends: *var_extends
+    volumes: *var_volumes
+    environment:
+      in_txt_path: "/veld/input/1/data/ELTeC-eng/level1/"
+      in_model_path: "/veld/input/2/data/eng/english-ewt-ud-2.5-191206.udpipe"
+      out_conllu_path: "/veld/output/data/ELTeC-eng/level1/"
+  
+  veld_infer_fra:
+    extends: *var_extends
+    volumes: *var_volumes
+    environment:
+      in_txt_path: "/veld/input/1/data/ELTeC-fra/level1/"
+      in_model_path: "/veld/input/2/data/fra/french-gsd-ud-2.5-191206.udpipe"
+      out_conllu_path: "/veld/output/data/ELTeC-fra/level1/"
+  
+  veld_infer_spa:
+    extends: *var_extends
+    volumes: *var_volumes
+    environment:
+      in_txt_path: "/veld/input/1/data/ELTeC-spa/level1/"
+      in_model_path: "/veld/input/2/data/spa/spanish-gsd-ud-2.5-191206.udpipe"
+      out_conllu_path: "/veld/output/data/ELTeC-spa/level1/"
 
