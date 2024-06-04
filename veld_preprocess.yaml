@@ -4,7 +4,7 @@ x-veld:
 
 x-vars: 
   - &var_extends
-    file: ./veld_executable_16_xml_xslt_transformer/veld.yaml
+    file: ./veld_code_16_xml_xslt_transformer/veld.yaml
     service: veld
   - &var_volumes
     - ./veld_data_12_eltec_original_selection/:/veld/input/1/
