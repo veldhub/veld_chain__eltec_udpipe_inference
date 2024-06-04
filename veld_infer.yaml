@@ -5,7 +5,7 @@ x-veld:
 x-vars: 
   - &var_extends
     file: ./veld_code_15_udpipe/veld_infer.yaml
-    service: veld
+    service: veld_infer
   - &var_volumes
     - ./veld_data_13_eltec_txt_transformed/:/veld/input/1/
     - ./veld_data_14_udpipe_models/:/veld/input/2/
