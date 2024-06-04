@@ -1,9 +1,9 @@
-[submodule "veld_executable_15_udpipe"]
-	path = veld_executable_15_udpipe
-	url = https://github.com/acdh-oeaw/veld_executable_15_udpipe.git
-[submodule "veld_executable_16_xml_xslt_transformer"]
-	path = veld_executable_16_xml_xslt_transformer
-	url = https://github.com/acdh-oeaw/veld_executable_16_xml_xslt_transformer.git
+[submodule "veld_code_15_udpipe"]
+	path = veld_code_15_udpipe
+	url = https://github.com/acdh-oeaw/veld_code_15_udpipe.git
+[submodule "veld_code_16_xml_xslt_transformer"]
+	path = veld_code_16_xml_xslt_transformer
+	url = https://github.com/acdh-oeaw/veld_code_16_xml_xslt_transformer.git
 [submodule "veld_data_12_eltec_selection"]
 	path = veld_data_12_eltec_original_selection
 	url = https://github.com/acdh-oeaw/veld_data_12_eltec_original_selection.git
