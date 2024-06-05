@@ -1,7 +1,11 @@
 x-veld:
   chain:
-    description: "udpipe inference setup, reading in preprocessed ELTeC data"
+    # TODO
+    about:
+      description: "udpipe inference setup, reading in preprocessed ELTeC data"
+      topics:
 
+# define some variables here once, so that following services can reuse it
 x-vars: 
   - &var_extends
     file: ./veld_code_15_udpipe/veld_infer.yaml

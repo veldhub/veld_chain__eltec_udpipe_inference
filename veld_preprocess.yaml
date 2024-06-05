@@ -1,7 +1,11 @@
 x-veld:
   chain:
-    description: "xml / xslt transformation of ELTeC data"
+    # TODO
+    about:
+      description: "xml / xslt transformation of ELTeC data"
+      topics:
 
+# define some variables here once, so that following services can reuse it
 x-vars: 
   - &var_extends
     file: ./veld_code_16_xml_xslt_transformer/veld.yaml
