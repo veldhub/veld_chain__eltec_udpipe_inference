@@ -1,0 +1,16 @@
+x-veld:
+  chain:
+    about:
+      description: "chain to analyse the conllu data which was inferenced by udpipe on several ELTeC
+        corpora."
+      topics:
+
+services:
+  veld_anayse:
+    extends:
+      file: ./veld_code_19_analyse_conllu/veld.yaml
+      service: veld
+    volumes:
+      - ./veld_data_15_eltec_udpipe_conllu/:/veld/input/
+      - ./veld_data_16_eltec_conllu_stats/:/veld/output/
+
