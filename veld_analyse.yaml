@@ -1,9 +1,8 @@
 x-veld:
   chain:
-    about:
-      description: "chain to analyse the conllu data which was inferenced by udpipe on several ELTeC
-        corpora."
-      topics:
+    description: "chain to analyse the conllu data which was inferenced by udpipe on several ELTeC
+      corpora."
+    topics:
 
 services:
   veld_anayse:

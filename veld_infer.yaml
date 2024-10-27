@@ -1,9 +1,7 @@
 x-veld:
   chain:
-    # TODO
-    about:
-      description: "udpipe inference setup, reading in preprocessed ELTeC data"
-      topics:
+    description: "udpipe inference setup, reading in preprocessed ELTeC data"
+    topics:
 
 # define some variables here once, so that following services can reuse it
 x-vars: 

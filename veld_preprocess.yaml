@@ -1,9 +1,7 @@
 x-veld:
   chain:
-    # TODO
-    about:
-      description: "xml / xslt transformation of ELTeC data"
-      topics:
+    description: "xml / xslt transformation of ELTeC data"
+    topics:
 
 # define some variables here once, so that following services can reuse it
 x-vars: 
