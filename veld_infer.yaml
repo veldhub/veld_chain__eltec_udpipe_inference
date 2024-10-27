@@ -2,6 +2,14 @@ x-veld:
   chain:
     description: "udpipe inference setup, reading in preprocessed ELTeC data"
     topics:
+      - "NLP"
+      - "Machine learning"
+      - "tokenization"
+      - "lemmatization"
+      - "part of speech"
+      - "dependency parsing"
+      - "universal dependencies"
+      - "grammatical annotation"
 
 # define some variables here once, so that following services can reuse it
 x-vars: 
