@@ -23,14 +23,13 @@ compose, you might need to replace the compose commands below, from `docker comp
 clone this repo, including all its submodules recursively (this also pulls the ELTeC repos)
 
 ```
-git clone --recurse-submodules
-https://github.com/acdh-oeaw/veld_chain_14_eltec_udpipe_inference.git
+git clone --recurse-submodules https://github.com/acdh-oeaw/veld_chain_14_eltec_udpipe_inference.git
 ```
 
 ### preprocessing
 
-Do preprocessing which converts the ELTeC data from xml into txt as defined in this
-[XSLT](./xsl/transformation.xsl). The output of this is saved in
+This preprocessing converts the ELTeC data from xml into txt files as defined in
+[./xsl/transformation.xml](./xsl/transformation.xsl). The output of this is saved to
 [./data_tmp_txt_transformed/](./data_tmp_txt_transformed/).
 
 ```
@@ -39,7 +38,7 @@ docker compose -f veld_preprocess.yaml up
 
 ### udpipe inference
 
-Do inference with udpipe models downloaded from
+Inference is done with udpipe models downloaded from
 https://lindat.mff.cuni.cz/repository/xmlui/handle/11234/1-3131#. Input is the data from the
 previous preproccesing chain, and output is saved to
 [./data_tmp_conllu_inferenced/](./data_tmp_conllu_inferenced/)
@@ -50,8 +49,8 @@ docker compose -f veld_infer.yaml up
 
 ### statistical analysis
 
-Start a jupyter notebook which can be used for deeper inspection. Input are the inferenced conllu
-files, and the output statistics are persisted into data veld repo:
+Start a jupyter notebook which can be used for deeper inspection interactively. Inputs are the
+inferenced conllu files, and the output statistics are persisted into data veld repo:
 [https://github.com/acdh-oeaw/veld_data_16_eltec_conllu_stats](https://github.com/acdh-oeaw/veld_data_16_eltec_conllu_stats)
 
 ```
