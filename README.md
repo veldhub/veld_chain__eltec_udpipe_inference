@@ -54,6 +54,6 @@ inferenced conllu files, and the output statistics are persisted into data veld 
 [https://github.com/acdh-oeaw/veld_data_16_eltec_conllu_stats](https://github.com/acdh-oeaw/veld_data_16_eltec_conllu_stats)
 
 ```
-docker compose -f veld_analyse up
+docker compose -f veld_analyse.yaml up
 ```
 
