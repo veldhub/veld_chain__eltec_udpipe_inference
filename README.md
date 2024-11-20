@@ -36,8 +36,9 @@ docker compose -f veld_infer.yaml up
 
 ### statistical analysis
 
-Start a jupyter notebook which can be used for deeper inspection. Statistics are persisted into
-[./veld_data_16_eltec_conllu_stats/](./veld_data_16_eltec_conllu_stats/)
+Start a jupyter notebook which can be used for deeper inspection. Statistics are persisted into data
+veld repo: 
+[https://github.com/acdh-oeaw/veld_data_16_eltec_conllu_stats](https://github.com/acdh-oeaw/veld_data_16_eltec_conllu_stats)
 ```
 docker compose -f veld_analyse up
 ```
