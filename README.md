@@ -1,13 +1,14 @@
-# veld_chain_14_xml_to_udpipe
+# veld_chain_14_eltec_udpipe_inference
 
 (work in progress and meant to be more of experimental nature, fleshing out the VELD design)
 
-This repo  uses udpipe to infer on five ELTeC corpora and aggregates their linguistic features into
-simple overview statistics. 
+This repo uses [udpipe 1](https://ufal.mff.cuni.cz/udpipe/1) to infer on five ELTeC corpora and
+aggregates their linguistic features into simple overview statistics. 
 
-There are three processing workflows encapsulated in VELD chains: `veld_preprocess.yaml,
-veld_infer.yaml, veld_analyse.yaml`. Details on each can be found below and within the respective
-yaml files.
+There are three processing workflows encapsulated in VELD chains:
+[veld_preprocess.yaml](./veld_preprocess.yaml), [veld_infer.yaml](./veld_infer.yaml),
+[veld_analyse.yaml](./veld_analyse.yaml). Details on each can be found below and within the
+respective yaml files.
 
 ## requirements
 
