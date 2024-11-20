@@ -18,6 +18,6 @@ services:
       file: ./veld_code_19_analyse_conllu/veld.yaml
       service: veld
     volumes:
-      - ./veld_data_15_eltec_udpipe_conllu/:/veld/input/
+      - ./data_tmp_conllu_inferenced/:/veld/input/
       - ./veld_data_16_eltec_conllu_stats/:/veld/output/
 

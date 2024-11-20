@@ -19,7 +19,7 @@ x-vars:
   - &var_volumes
     - ./veld_data_12_eltec_original_selection/:/veld/input/1/
     - ./xsl/:/veld/input/2/
-    - ./veld_data_13_eltec_txt_transformed/:/veld/output/
+    - ./data_tmp_txt_transformed/:/veld/output/
 
 services:
 
