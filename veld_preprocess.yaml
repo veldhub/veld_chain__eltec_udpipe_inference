@@ -14,12 +14,12 @@ x-veld:
 # define some variables here once, so that following services can reuse it
 x-vars: 
   - &var_extends
-    file: ./veld_code_16_xml_xslt_transformer/veld.yaml
+    file: ./code/veld_code__xml_xslt_transformer/veld.yaml
     service: veld
   - &var_volumes
-    - ./veld_data_12_eltec_original_selection/:/veld/input/1/
-    - ./xsl/:/veld/input/2/
-    - ./data_tmp_txt_transformed/:/veld/output/
+    - ./data/veld_data__eltec_original_selection/data/:/veld/input/xml/
+    - ./data/xsl/:/veld/input/xsl/
+    - ./data/data_tmp_txt_transformed/:/veld/output/
 
 services:
 
@@ -27,39 +27,39 @@ services:
     extends: *var_extends
     volumes: *var_volumes
     environment:
-      in_xsl_path: "/veld/input/2/transformation.xsl"
-      in_xml_path: "/veld/input/1/data/ELTeC-cze/level1/"
-      out_txt_path: "/veld/output/data/ELTeC-cze/level1/"
+      in_xsl_file: "transformation.xsl"
+      in_xml_file: "ELTeC-cze/level1/"
+      out_txt_file: "ELTeC-cze/level1/"
 
   veld_preprocess_deu:
     extends: *var_extends
     volumes: *var_volumes
     environment:
-      in_xsl_path: "/veld/input/2/transformation.xsl"
-      in_xml_path: "/veld/input/1/data/ELTeC-deu/level1/"
-      out_txt_path: "/veld/output/data/ELTeC-deu/level1/"
+      in_xsl_file: "transformation.xsl"
+      in_xml_file: "ELTeC-deu/level1/"
+      out_txt_file: "ELTeC-deu/level1/"
 
   veld_preprocess_eng:
     extends: *var_extends
     volumes: *var_volumes
     environment:
-      in_xsl_path: "/veld/input/2/transformation.xsl"
-      in_xml_path: "/veld/input/1/data/ELTeC-eng/level1/"
-      out_txt_path: "/veld/output/data/ELTeC-eng/level1/"
+      in_xsl_file: "transformation.xsl"
+      in_xml_file: "ELTeC-eng/level1/"
+      out_txt_file: "ELTeC-eng/level1/"
 
   veld_preprocess_fra:
     extends: *var_extends
     volumes: *var_volumes
     environment:
-      in_xsl_path: "/veld/input/2/transformation.xsl"
-      in_xml_path: "/veld/input/1/data/ELTeC-fra/level1/"
-      out_txt_path: "/veld/output/data/ELTeC-fra/level1/"
+      in_xsl_file: "transformation.xsl"
+      in_xml_file: "ELTeC-fra/level1/"
+      out_txt_file: "ELTeC-fra/level1/"
 
   veld_preprocess_spa:
     extends: *var_extends
     volumes: *var_volumes
     environment:
-      in_xsl_path: "/veld/input/2/transformation.xsl"
-      in_xml_path: "/veld/input/1/data/ELTeC-spa/level1/"
-      out_txt_path: "/veld/output/data/ELTeC-spa/level1/"
+      in_xsl_file: "transformation.xsl"
+      in_xml_file: "ELTeC-spa/level1/"
+      out_txt_file: "ELTeC-spa/level1/"
 
