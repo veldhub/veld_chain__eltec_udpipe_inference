@@ -1,4 +1,4 @@
-# veld_chain_14_eltec_udpipe_inference
+# veld_chain__eltec_udpipe_inference
 
 This repo uses [udpipe 1](https://ufal.mff.cuni.cz/udpipe/1) to infer on five ELTeC corpora and
 aggregates their linguistic features into simple overview statistics. 
