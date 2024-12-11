@@ -1,6 +1,4 @@
-# veld_chain_14_eltec_udpipe_inference
-
-(work in progress and meant to be more of experimental nature, fleshing out the VELD design)
+# veld_chain__eltec_udpipe_inference
 
 This repo uses [udpipe 1](https://ufal.mff.cuni.cz/udpipe/1) to infer on five ELTeC corpora and
 aggregates their linguistic features into simple overview statistics. 
@@ -23,7 +21,7 @@ compose, you might need to replace the compose commands below, from `docker comp
 clone this repo, including all its submodules recursively (this also pulls the ELTeC repos)
 
 ```
-git clone --recurse-submodules https://github.com/acdh-oeaw/veld_chain_14_eltec_udpipe_inference.git
+git clone --recurse-submodules https://github.com/veldhub/veld_chain__eltec_udpipe_inference/
 ```
 
 ### preprocessing
@@ -51,7 +49,7 @@ docker compose -f veld_infer.yaml up
 
 Start a jupyter notebook which can be used for deeper inspection interactively. Inputs are the
 inferenced conllu files, and the output statistics are persisted into data veld repo:
-[https://github.com/acdh-oeaw/veld_data_16_eltec_conllu_stats](https://github.com/acdh-oeaw/veld_data_16_eltec_conllu_stats)
+https://github.com/veldhub/veld_data__eltec_conllu_stats
 
 ```
 docker compose -f veld_analyse.yaml up
