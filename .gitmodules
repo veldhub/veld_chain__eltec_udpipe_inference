@@ -1,15 +1,15 @@
-[submodule "veld_code_15_udpipe"]
-	path = veld_code_15_udpipe
-	url = https://github.com/acdh-oeaw/veld_code_15_udpipe.git
-[submodule "veld_code_16_xml_xslt_transformer"]
-	path = veld_code_16_xml_xslt_transformer
-	url = https://github.com/acdh-oeaw/veld_code_16_xml_xslt_transformer.git
-[submodule "veld_data_12_eltec_selection"]
-	path = veld_data_12_eltec_original_selection
-	url = https://github.com/acdh-oeaw/veld_data_12_eltec_original_selection.git
-[submodule "veld_code_19_analyse_conllu"]
-	path = veld_code_19_analyse_conllu
-	url = https://github.com/acdh-oeaw/veld_code_19_analyse_conllu.git
-[submodule "veld_data_16_eltec_conllu_stats"]
-	path = veld_data_16_eltec_conllu_stats
-	url = https://github.com/acdh-oeaw/veld_data_16_eltec_conllu_stats.git
+[submodule "code/veld_code__udpipe"]
+	path = code/veld_code__udpipe
+	url = https://github.com/veldhub/veld_code__udpipe.git
+[submodule "code/veld_code__xml_xslt_transformer"]
+	path = code/veld_code__xml_xslt_transformer
+	url = https://github.com/veldhub/veld_code__xml_xslt_transformer.git
+[submodule "code/veld_code__analyse_conllu"]
+	path = code/veld_code__analyse_conllu
+	url = https://github.com/veldhub/veld_code__analyse_conllu.git
+[submodule "data/veld_data__eltec_original_selection"]
+	path = data/veld_data__eltec_original_selection
+	url = https://github.com/veldhub/veld_data__eltec_original_selection.git
+[submodule "data/veld_data__eltec_conllu_stats"]
+	path = data/veld_data__eltec_conllu_stats
+	url = https://github.com/veldhub/veld_data__eltec_conllu_stats.git
