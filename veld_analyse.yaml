@@ -13,7 +13,7 @@ x-veld:
       - "grammatical annotation"
 
 services:
-  veld_anayse:
+  veld_analyse:
     extends:
       file: ./code/veld_code__analyse_conllu/veld.yaml
       service: veld
