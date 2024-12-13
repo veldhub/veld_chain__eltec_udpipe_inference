@@ -13,3 +13,6 @@
 [submodule "data/veld_data__eltec_conllu_stats"]
 	path = data/veld_data__eltec_conllu_stats
 	url = https://github.com/veldhub/veld_data__eltec_conllu_stats.git
+[submodule "code/veld_code__downloader"]
+	path = code/veld_code__downloader
+	url = https://github.com/veldhub/veld_code__downloader.git
