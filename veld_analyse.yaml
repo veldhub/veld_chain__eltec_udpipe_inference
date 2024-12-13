@@ -15,9 +15,9 @@ x-veld:
 services:
   veld_anayse:
     extends:
-      file: ./veld_code_19_analyse_conllu/veld.yaml
+      file: ./code/veld_code__analyse_conllu/veld.yaml
       service: veld
     volumes:
-      - ./data_tmp_conllu_inferenced/:/veld/input/
-      - ./veld_data_16_eltec_conllu_stats/:/veld/output/
+      - ./data/data_tmp_conllu_inferenced/:/veld/input/
+      - ./data/veld_data__eltec_conllu_stats/data/:/veld/output/
 
