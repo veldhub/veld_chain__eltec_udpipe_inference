@@ -48,7 +48,8 @@ docker compose -f veld_step1_preprocess.yaml up
 ### step 2: download udpipe models
 
 udpipe will be used to infer on the data. The models will be downloaded from 
-https://lindat.mff.cuni.cz/repository/xmlui/handle/11234/1-3131# .
+https://lindat.mff.cuni.cz/repository/xmlui/handle/11234/1-3131# and saved to 
+[./data/data_tmp_udpipe_models/](./data/data_tmp_udpipe_models/).
 
 ```
 docker compose -f veld_step2_download_models.yaml up
