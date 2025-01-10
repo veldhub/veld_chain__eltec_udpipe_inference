@@ -6,7 +6,7 @@ corpora and aggregates their linguistic features into simple overview statistics
 There are four processing workflows encapsulated in VELD chains. They are described below, and
 further details can be found within their respective veld yaml files: 
 
-- [./veld_step1_preprocess.yaml](./veld_step1_preprocess.yamll)
+- [./veld_step1_preprocess.yaml](./veld_step1_preprocess.yaml)
 - [./veld_step2_download_models.yaml](./veld_step2_download_models.yaml)
 - [./veld_step3_infer.yaml](./veld_step3_infer.yaml)
 - [./veld_step4_analyse.yaml](./veld_step4_analyse.yaml)
