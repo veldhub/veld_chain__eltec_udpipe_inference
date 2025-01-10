@@ -30,8 +30,8 @@ clone this repo, including all its submodules recursively (this also pulls the E
 git clone --recurse-submodules https://github.com/veldhub/veld_chain__eltec_udpipe_inference/
 ```
 
-After cloning, the chains can be executed individually by following the steps below, or by running 
-it in one aggregating chain `veld_step_all.yaml`
+After cloning, the chains can be executed [individually](#individual-steps) or by running it in 
+[one aggregating chain](#aggregating-chain)
 
 ## individual steps
 
@@ -73,7 +73,7 @@ https://github.com/veldhub/veld_data__eltec_conllu_stats
 docker compose -f veld_step4_analyse.yaml up
 ```
 
-## aggregated chain
+## aggregating chain
 
 All of the individual chains above can be simply run by launching the aggregating chain:
 
