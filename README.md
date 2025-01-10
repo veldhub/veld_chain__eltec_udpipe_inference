@@ -11,21 +11,29 @@ further details can be found within their respective veld yaml files:
 - [./veld_step3_infer.yaml](./veld_step3_infer.yaml)
 - [./veld_step4_analyse.yaml](./veld_step4_analyse.yaml)
 
-## requirements
+These chains are also aggregated into a single chain referencing them:
+- [./veld_step_all.yaml](./veld_step_all.yaml)
+
+# requirements
 
 Have git and docker compose installed. **Note, that depending on the version of docker or docker
 compose, you might need to replace the compose commands below, from `docker compose` to
 `docker-compose`.**
 
-## how to replicate
+# how to replicate
 
-### clone
+## clone
 
 clone this repo, including all its submodules recursively (this also pulls the ELTeC repos)
 
 ```
 git clone --recurse-submodules https://github.com/veldhub/veld_chain__eltec_udpipe_inference/
 ```
+
+After cloning, the chains can be executed individually by following the steps below, or by running 
+it in one aggregating chain `veld_step_all.yaml`
+
+## individual steps
 
 ### step 1: preprocessing
 
@@ -63,5 +71,13 @@ https://github.com/veldhub/veld_data__eltec_conllu_stats
 
 ```
 docker compose -f veld_step4_analyse.yaml up
+```
+
+## aggregated chain
+
+All of the individual chains above can be simply run by launching the aggregating chain:
+
+```
+docker compose -f veld_step_all.yaml up
 ```
 
