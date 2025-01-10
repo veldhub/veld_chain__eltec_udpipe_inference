@@ -1,12 +1,15 @@
 # veld_chain__eltec_udpipe_inference
 
-This repo uses [udpipe 1](https://ufal.mff.cuni.cz/udpipe/1) to infer on five ELTeC corpora and
-aggregates their linguistic features into simple overview statistics. 
+This chain VELD repo uses [udpipe 1](https://ufal.mff.cuni.cz/udpipe/1) to infer on five ELTeC 
+corpora and aggregates their linguistic features into simple overview statistics. 
 
-There are three processing workflows encapsulated in VELD chains (docker compose services + VELD
-metadata): [veld_preprocess.yaml](./veld_preprocess.yaml), [veld_infer.yaml](./veld_infer.yaml),
-[veld_analyse.yaml](./veld_analyse.yaml). Details on each can be found below and within the
-respective yaml files.
+There are four processing workflows encapsulated in VELD chains. They are described below, and
+further details can be found within their respective veld yaml files: 
+
+- [./veld_step1_preprocess.yaml](./veld_step1_preprocess.yamll)
+- [./veld_step2_download_models.yaml](./veld_step2_download_models.yaml)
+- [./veld_step3_infer.yaml](./veld_step3_infer.yaml)
+- [./veld_step4_analyse.yaml](./veld_step4_analyse.yaml)
 
 ## requirements
 
@@ -24,34 +27,41 @@ clone this repo, including all its submodules recursively (this also pulls the E
 git clone --recurse-submodules https://github.com/veldhub/veld_chain__eltec_udpipe_inference/
 ```
 
-### preprocessing
+### step 1: preprocessing
 
 This preprocessing converts the ELTeC data from xml into txt files as defined in
-[./xsl/transformation.xml](./xsl/transformation.xsl). The output of this is saved to
-[./data_tmp_txt_transformed/](./data_tmp_txt_transformed/).
+[./data/xsl/transformation.xsl](./data/xsl/transformation.xsl). The output of this is saved to
+[./data/data_tmp_txt_transformed/](./data/data_tmp_txt_transformed/).
 
 ```
-docker compose -f veld_preprocess.yaml up
+docker compose -f veld_step1_preprocess.yaml up
 ```
 
-### udpipe inference
+### step 2: download udpipe models
 
-Inference is done with udpipe models downloaded from
-https://lindat.mff.cuni.cz/repository/xmlui/handle/11234/1-3131#. Input is the data from the
-previous preproccesing chain, and output is saved to
-[./data_tmp_conllu_inferenced/](./data_tmp_conllu_inferenced/)
+udpipe will be used to infer on the data. The models will be downloaded from 
+https://lindat.mff.cuni.cz/repository/xmlui/handle/11234/1-3131# .
 
 ```
-docker compose -f veld_infer.yaml up
+docker compose -f veld_step2_download_models.yaml up
 ```
 
-### statistical analysis
+### step 3: udpipe inference
 
-Start a jupyter notebook which can be used for deeper inspection interactively. Inputs are the
+Input for inference is the data from the previous preproccesing chains, and output is saved to
+[./data/data_tmp_conllu_inferenced/](./data/data_tmp_conllu_inferenced/)
+
+```
+docker compose -f veld_step3_infer.yaml up
+```
+
+### step 4: statistical analysis
+
+Starts a jupyter notebook which can be used for deeper inspection interactively. Inputs are the
 inferenced conllu files, and the output statistics are persisted into data veld repo:
 https://github.com/veldhub/veld_data__eltec_conllu_stats
 
 ```
-docker compose -f veld_analyse.yaml up
+docker compose -f veld_step4_analyse.yaml up
 ```
 
