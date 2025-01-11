@@ -14,6 +14,13 @@ further details can be found within their respective veld yaml files:
 These chains are also aggregated into a single chain referencing them:
 - [./veld_step_all.yaml](./veld_step_all.yaml)
 
+The chain velds reuse these code velds:
+
+- https://github.com/veldhub/veld_code__xml_xslt_transformer
+- https://github.com/veldhub/veld_code__downloader
+- https://github.com/veldhub/veld_code__udpipe
+- https://github.com/veldhub/veld_code__analyse_conllu
+
 # requirements
 
 Have git and docker compose installed. **Note, that depending on the version of docker or docker
