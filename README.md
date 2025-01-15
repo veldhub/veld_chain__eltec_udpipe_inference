@@ -71,7 +71,7 @@ docker compose -f veld_step4_analyse.yaml up
 
 **[./veld_step_all.yaml](./veld_step_all.yaml)**
 
-All of the individual chains above can be simply run by launching the aggregating chain:
+All of the individual chains above can be simply run by launching the aggregated chain:
 
 ```
 docker compose -f veld_step_all.yaml up
