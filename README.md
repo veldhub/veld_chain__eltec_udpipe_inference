@@ -23,8 +23,8 @@ git clone --recurse-submodules https://github.com/veldhub/veld_chain__eltec_udpi
 
 ## how to reproduce
 
-After cloning, the chains can be executed [individually](#individual-steps) or by running it in 
-[one aggregating chain](#aggregating-chain)
+After cloning, the chains can be executed [individually](#individual-steps) or by running it all
+together in one [aggregated chain](#aggregated-chain)
 
 ### individual steps
 
@@ -67,7 +67,7 @@ https://github.com/veldhub/veld_data__eltec_conllu_stats
 docker compose -f veld_step4_analyse.yaml up
 ```
 
-### aggregating chain
+### aggregated chain
 
 **[./veld_step_all.yaml](./veld_step_all.yaml)**
 
