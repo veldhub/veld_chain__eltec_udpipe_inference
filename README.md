@@ -1,4 +1,4 @@
-# veld_chain__eltec_udpipe_inference
+# ![veld chain](https://raw.githubusercontent.com/veldhub/.github/refs/heads/main/images/symbol_V_letter.png) veld_chain__eltec_udpipe_inference
 
 This chain VELD repo uses [udpipe 1](https://ufal.mff.cuni.cz/udpipe/1) to infer on five ELTeC 
 corpora and aggregates their linguistic features into simple overview statistics. 
