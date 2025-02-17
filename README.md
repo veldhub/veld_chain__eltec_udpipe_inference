@@ -28,43 +28,43 @@ together in one [aggregated chain](#aggregated-chain)
 
 ### individual steps
 
-**[./veld_step1_preprocess.yaml](./veld_step1_preprocess.yaml)**
+**[./veld_step_1_preprocess.yaml](./veld_step_1_preprocess.yaml)**
 
 This preprocessing converts the ELTeC data from xml into txt files as defined in
 [./data/xsl/transformation.xsl](./data/xsl/transformation.xsl). The output of this is saved to
 [./data/data_tmp_txt_transformed/](./data/data_tmp_txt_transformed/).
 
 ```
-docker compose -f veld_step1_preprocess.yaml up
+docker compose -f veld_step_1_preprocess.yaml up
 ```
 
-**[./veld_step2_download_models.yaml](./veld_step2_download_models.yaml)**
+**[./veld_step_2_download_models.yaml](./veld_step_2_download_models.yaml)**
 
 udpipe will be used to infer on the data. The models will be downloaded from 
 https://lindat.mff.cuni.cz/repository/xmlui/handle/11234/1-3131# and saved to 
 [./data/data_tmp_udpipe_models/](./data/data_tmp_udpipe_models/).
 
 ```
-docker compose -f veld_step2_download_models.yaml up
+docker compose -f veld_step_2_download_models.yaml up
 ```
 
-**[./veld_step3_infer.yaml](./veld_step3_infer.yaml)**
+**[./veld_step_3_infer.yaml](./veld_step_3_infer.yaml)**
 
 Input for inference is the data from the previous preproccesing chains, and output is saved to
 [./data/data_tmp_conllu_inferenced/](./data/data_tmp_conllu_inferenced/)
 
 ```
-docker compose -f veld_step3_infer.yaml up
+docker compose -f veld_step_3_infer.yaml up
 ```
 
-**[./veld_step4_analyse.yaml](./veld_step4_analyse.yaml)**
+**[./veld_step_4_analyse.yaml](./veld_step_4_analyse.yaml)**
 
 Starts a jupyter notebook which can be used for deeper inspection interactively. Inputs are the
 inferenced conllu files, and the output statistics are persisted into data veld repo:
 https://github.com/veldhub/veld_data__eltec_conllu_stats
 
 ```
-docker compose -f veld_step4_analyse.yaml up
+docker compose -f veld_step_4_analyse.yaml up
 ```
 
 ### aggregated chain
