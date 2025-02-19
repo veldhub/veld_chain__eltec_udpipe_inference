@@ -67,6 +67,15 @@ https://github.com/veldhub/veld_data__eltec_conllu_stats
 docker compose -f veld_step_4_analyse.yaml up
 ```
 
+**[./veld_step_5_inspect_with_conllueditor.yaml](./veld_step_5_inspect_with_conllueditor.yamll)**
+
+Starts a [conllueditor](https://github.com/Orange-OpenSource/conllueditor) with which individual 
+conllu files can be visualized and inspected.
+
+```
+docker compose -f veld_step_5_inspect_with_conllueditor.yaml up
+```
+
 ### aggregated chain
 
 **[./veld_step_all.yaml](./veld_step_all.yaml)**
